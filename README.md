@@ -30,8 +30,3 @@ If your numbers match these, the run is reproduced.
 | 6.1 Out-of-fold threshold, 5:1 cost | 0.25 (FN 7.3, FP 15.3; at 0.5 it is FN 10.7, FP 3.7) |
 | 6.1 Best threshold by cost ratio | 1:1: 0.60, 2:1: 0.50, 5:1: 0.25, 10:1: 0.05 |
 
-## Limitations
-
-- Learning rate, lambda and threshold were tuned on the validation set, which is also part of the CV data, so the CV numbers are slightly optimistic. Nested CV is planned after midsem
-- The 5:1 FN to FP cost ratio is our assumption, not a measured clinical value
-- Feature selection, calibration, other models and noise robustness are part of Part 2
