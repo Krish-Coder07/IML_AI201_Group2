@@ -9,34 +9,6 @@ Team: Nikhil Kumar Karn (2025338), Yaman Kumar (2025561), Krish Gupta (2025269),
 - `AI_Project(Before Midsem).ipynb`: the full Part 1 notebook (EDA, preprocessing, baseline model, validation, cross-validation)
 - `data.csv`: the dataset (Kaggle version of Breast Cancer Wisconsin Diagnostic)
 
-## Requirements
-
-- Python 3.8 or newer
-- numpy, pandas, matplotlib, jupyter
-- Install with `pip install numpy pandas matplotlib jupyter`
-- Last tested with Python 3.13, numpy 2.5.3, pandas 3.0.5, matplotlib 3.11.2
-- No scikit-learn. The model, split, k-fold, metrics and AUC are all hand-written
-
-## How to run
-
-- Clone the repo and keep `data.csv` in the same folder as the notebook (the notebook reads `data.csv` by relative path)
-- Open the notebook and use Kernel > Restart & Run All (Colab: Runtime > Restart session and run all)
-- A full run took about 40 seconds on our test machine
-
-## Why the results are repeatable
-
-- One fixed seed (42) for the 70/15/15 stratified split
-- Cross-validation uses seeds 42, 43 and 44 for its 3 repeats
-- Training is deterministic: weights start at zero and we use full-batch gradient descent, so there is no random initialisation or mini-batch shuffling
-- The hold-out set is created but not evaluated anywhere in Part 1
-
-## Things to watch out for
-
-- Run cells top to bottom, once. The random generator is stateful, so re-running only the split cell gives a different split. If you re-run anything, restart and run all again
-- Do not edit or re-save `data.csv`. It should have 569 rows and 33 columns (`id`, `diagnosis`, 30 features, and an empty `Unnamed: 32`). The raw UCI `wdbc.data` has no header and will not work
-- Do not change the seed, learning rate (0.5), tolerance (1e-6), iteration limit (20000) or the lambda grid
-- Known cell-order issue: the cell starting with `etas_to_compare = [5, 1.5, 1.0, 0.5]` in Section 4.2 calls `lambda_sweep`, which is defined in the cell right after it. On a fresh run it stops with `NameError: name 'lambda_sweep' is not defined`. Run the next cell (`def lambda_sweep(eta):`), then continue from the failed cell. Results do not change. Moving the `def` cell above it fixes this
-- The eta = 10 row in the learning rate table is an unstable run that oscillates, so its last digits depend on the machine and library versions. On our re-run it gave final objective 0.100056 with 11095 loss increases, while our original run gave 0.101293 and 11106. The conclusion is the same (it never converges). All other rows matched exactly
 
 ## Expected results
 
