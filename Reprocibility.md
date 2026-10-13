@@ -3,7 +3,8 @@
 Running this notebook from top to bottom gives the numbers in our report and slides.
 
 ### Setup
-- Python 3.8 or newer with numpy, pandas, matplotlib and jupyter (`pip install numpy pandas matplotlib jupyter`)
+- Python 3.11+ (tested on 3.13), with numpy, pandas, matplotlib, jupyter: 
+  `pip install numpy pandas matplotlib jupyter`
 - Last tested on our machines with Python 3.13, numpy 2.5.3, pandas 3.0.5, matplotlib 3.11.2
 - Dataset: Kaggle "Breast Cancer Wisconsin (Diagnostic) Data Set", saved as `data.csv` next to this notebook.
 - The raw UCI `wdbc.data` has no header and will not work as it has the Unnames: 32 and 'id','diagnosis' coloumns. After removing those we will be left with 30 features in total which are in data.csv
