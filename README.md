@@ -6,7 +6,7 @@ Team: Nikhil Kumar Karn (2025338), Yaman Kumar (2025561), Krish Gupta (2025269),
 
 ## What is in this repo
 
-- `breast_cancer_part1_final.ipynb`: the full Part 1 notebook (EDA, preprocessing, baseline model, validation, cross-validation)
+- `AI_Project(Before Midsem).ipynb`: the full Part 1 notebook (EDA, preprocessing, baseline model, validation, cross-validation)
 - `data.csv`: the dataset (Kaggle version of Breast Cancer Wisconsin Diagnostic)
 
 ## Requirements
